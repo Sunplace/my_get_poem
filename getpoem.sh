@@ -2,11 +2,12 @@
 
 poem_num=`python rand_poem.py`
 echo $poem_num
-curl -o __"$poem_num"__.html http://so.gushiwen.org/view_"$poem_num".aspx
-while [ !  -s __"$poem_num"__.html  ]
-do
-    curl -o __"$poem_num"__.html http://so.gushiwen.org/view_"$poem_num".aspx
-done
+python download_page.py $poem_num
+#curl -o __"$poem_num"__.html http://so.gushiwen.org/view_"$poem_num".aspx
+#while [ !  -s __"$poem_num"__.html  ]
+#do
+#    curl -o __"$poem_num"__.html http://so.gushiwen.org/view_"$poem_num".aspx
+#done
 
 echo '<HTML xmlns="http://www.w3.org/1999/xhtml>"' >> _"$poem_num"_.html
 echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' \
