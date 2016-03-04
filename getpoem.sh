@@ -22,8 +22,9 @@ grep '<p style="margin:' __"$poem_num"__.html |\
 python beliefy.py __"$poem_num"__.html _"$poem_num"_.html
 echo "</BODY>" >> _"$poem_num"_.html
 echo "</HTML>" >> _"$poem_num"_.html
-mv _"$poem_num"_.html ./
+mv _"$poem_num"_.html ./poems
 rm __"$poem_num"__.html
+python add_poem.py $poem_num
 exit
 
 #~/bin/gethtml so.gushiwen.org/view_888.aspx 80 > tmp1111
